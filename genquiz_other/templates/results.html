@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+</head>
+<body>
+<h1>Quiz Results</h1>
+{% for result in results %}
+<p>Question {{ loop.index }}: {{ result.question }}</p>
+<p>Your answer: {{ result.user_answer }}</p>
+<p>Correct answer: {{ result.correct_answer }}</p>
+<p>{% if result.is_correct %}Correct!{% else %}Incorrect.{% endif %}</p>
+<hr>
+{% endfor %}
+</body>
+</html>
